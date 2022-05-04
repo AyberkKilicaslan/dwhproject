@@ -1,0 +1,175 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="jumbotron text-center">
+        <h3>Algorithms And Experimental Results</h3>
+            <br>
+        <h5>Algorithms</h5>
+        <h7>K-Nearest Neighbour</h7>
+        <br>
+        <p>The supervised learning technique K-nearest neighbors
+                (KNN) is used for both regression and classification. By
+                computing the distance between the test data and all of the
+                training points, KNN tries to predict the proper class for the
+                test data. Then choose the K number of points that are the
+                most similar to the test data. The KNN algorithm analyzes the
+                likelihood of test data belonging to each of the ’K’ training
+                data classes, and the class with the highest probability is
+                chosen [1]. Hyper-parameters used during the execution of
+                the algorithm: <br>
+                • Metric is Manhattan,<br>
+                • Number of neighbour is 16,<br>
+                • Leaf size is 30.</p>
+        <br>
+        <h7> Extra Trees Classifier</h7>
+        <br>
+        <p>Extremely Randomized Trees Classifier (Extra Trees Classifier) is a form of ensemble learning technique that outputs a
+                classification result by aggregating the outcomes of several decorrelated decision trees collected in a ”forest.” It is conceptually identical to a Random Forest Classifier, with the exception
+                of how the decision trees in the forest are constructed. The
+                Extra Trees Forest’s Decision Trees are all made from the
+                original training sample. Then, at each test node, each tree
+                is given a random sample of k features from the feature set,
+                from which it must choose the best feature to split the data
+                according to certain mathematical criteria (typically the Gini
+                Index) [2].Hyper-parameters used during the execution of the
+                algorithm:<br>
+                • Max-depth is 6,<br>
+                • Number of estimator is 200,<br>
+                • Criteration is Gini.
+                </p>
+        <br>
+        <h7>Random Forest Classifier</h7>
+        <br>
+        <p>Random forests is a method for supervised learning. It has
+                the ability to be used for both classification and regression. It’s
+                also the most adaptable and user-friendly algorithm. The trees
+                make up a forest. A forest is thought to be more strong the
+                more trees it has. Random forests generate decision trees from
+                randomly chosen data samples, obtain predictions from each
+                tree, then vote on the best option. It also serves as a strong
+                indicator of the value of the feature [3]. Hyper-parameters used
+                during the execution of the algorithm:<br>
+                • Max-depth is 6,<br>
+                • Number of estimator is 200,<br>
+                • Criteration is Gini.</p>
+        <br>
+        <h7>Light Gradient Boosting Machine</h7>
+        <br>
+        <p>It’s a gradient boosting framework that uses tree-based
+                learning algorithms, which are widely regarded as one of
+                the most powerful computer methods available. It’s said to
+                be a quick algorithm. While other algorithms’ trees develop
+                horizontally, the LightGBM method climbs vertically, which
+                means it grows leaf-by-leaf, whereas other algorithms grow
+                level-by-level. The leaf with the greatest loss is chosen
+                by LightGBM to grow. When expanding the same leaf, it
+                can reduce the loss more than a level-wise strategy [4].
+                Hyper-parameters used during the execution of the algorithm:<br>
+                • Learning rate is 0.1,<br>
+                • Minimum child samples are 66,<br>
+                • Number of estimator is 100,<br>
+                • Number of leaves is 90.
+                
+</p>
+        <br>
+        <h7> Extreme Gradient Boosting </h7>
+        <br>
+        <p>XGBoost is a distributed gradient boosting toolkit that has
+                been tuned for efficiency, flexibility, and portability. It uses
+                the Gradient Boosting framework to create machine learning
+                algorithms. XGBoost is a parallel tree boosting (also known
+                as GBDT, GBM) algorithm that solves a variety of data
+                science issues quickly and accurately. The trees are created
+                successively in boosting, with each consecutive tree aiming to
+                minimize the preceding tree’s mistakes. Each tree builds on the
+                knowledge of its ancestors and corrects any lingering faults.
+                As a result, the following tree in the sequence will learn from
+                an updated set of residuals [5]. Hyper-parameters used during <br>
+                the execution of the algorithm:<br>
+                • Learning rate is 0.3,<br>
+                • Max-depth is 5,<br>
+                • Number of estimator is 70.</p>
+        <br>
+    <hr>
+        <h5>Optimization of the Model</h5>
+        <br>
+        <p>In classification analysis, accuracy is a metric that
+gives correctness. If this value is high, it shows how well
+the model can make predictions. As a result of the
+researches, it has been noticed that the Precision and
+Recall values are also important. Precision value deals
+with truly correct values and incorrectly correct values
+and determines how many are actually correct. Recall, on
+the other hand, determines how much of the operations
+that should actually be correct are correct. In addition, the
+F1 score value is the harmonic mean of the Precision and
+Recall values and generally used for comparing models.
+In addition to the Accuracy value, it is important for the
+model that these three values are high.
+ An increase in the performance of the model is
+detected by changing the values of the hyperparameters
+given while creating the model. For this reason, support
+was taken from the grid search algorithm to find the
+optimal parameters. For the grid search algorithm, first of
+all, the parameters affecting the model are determined and
+all values are given a range for their values. Then the
+algorithm tries all possible combinations and returns the
+best parameter values by using cross validation.
+ Grid search technique was applied on the validation
+set, the model was trained on the train set, and the success
+of the model was measured with the test set.</p>
+       <br>
+    <hr>
+       <h5>Results</h5>
+       <br>
+        <p>After the data set was finalized, it was divided into 3 parts
+as train, test and validation set. Train set was used for model,
+test set was used for prediction and validation set was used
+for grid search.
+ In the study, model creation, estimation, model tuning
+and cross validation processes were performed for 5 different
+algorithms, respectively. The k value for the cross validation
+was set as 10 and was used in that way in all algorithms. In
+the model tunning process, suitable parameters for grid
+search were searched. In the selection of these parameters,
+great care was taken to include the most frequently used
+parameters with a high success rate.</p>
+        <br>
+        <h7> Model Results </h7> <br>
+        <img src={{ url_for('static', filename='results.png') }}  style="width:800px;height:200px;">
+        <br><br>
+        <p>As a result, we can see that LightGBM is the best model with respect to accuracy values..</p>
+        <br>
+    <hr>
+       <h5>Conclusion</h5>
+        <br>
+        <p>As a result, an idea about the characteristics of the data
+was obtained with exploratory data analysis, statistical
+approaches and data visualization techniques on the dataset.
+Thus, a more realistic approach was made by recognizing the
+data in the data preprocessing steps. Preprocessing consisted
+of missing data analysis and filling in this data, outlier
+analysis and deletion of these values, searching and
+correcting false values, and deleting non-generalizable
+columns. The data distribution of the target column was
+examined and oversampling was performed with the SMOTE
+technique. KNN, Gaussian Naive Bayes, Support Vector
+Machines, Artificial Neural Networks, Random Forest
+models were created with the train set. And optimization was
+done on the validation set with grid search technique. While
+measuring the success of the model, accuracy, precision,
+recall, f1 score values were checked using the test set, and the
+most successful model, Random Forest model, was selected
+by evaluating the accuracy value. Thus, using this model,
+when a new music data comes in, its genre is determined.</p>
+       <br>
+        <br>
+    <hr>
+       <h5>References</h5>
+        <br>
+        <p>[1] https://medium.com/swlh/k-nearest-neighbor-ca2593d7a3c4</p>
+<p>[2] https://www.geeksforgeeks.org/ml-extra-tree-classifier-for-feature-selection</p>
+<p>[3] https://www.datacamp.com/community/tutorials/random-forests-classifier-python</p>
+<p>[4] https://www.analyticssteps.com/blogs/what-light-gbm-algorithm-how-use-it</p>
+<p>[5] https://www.analyticsvidhya.com/blog/2018/09/an-end-to-end-guide-to-understand-the-math-behind-xgboost/</p>
+</div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<form action="/testRes" method="post" >
+    <br>
+    <br>
+  <div class="form-group">
+    <label for="WeakFoot">WeakFoot</label>
+    <input type="number" class="form-control" id="WeakFoot" name="WeakFoot" required="required"  >
+  </div>
+  <div class="form-group">
+    <label for="SkillMoves">SkillMoves</label>
+    <input type="number" class="form-control" id="SkillMoves" name="SkillMoves" required="required"p>
+  </div>
+  <div class="form-group">
+    <label for="Crossing">Crossing</label>
+    <input type="number" class="form-control" id="Crossing" name="Crossing" required="required"p>
+  </div>
+  <div class="form-group">
+    <label for="Finishing">Finishing</label>
+    <input type="number" class="form-control" id="Finishing" name="Finishing" required="required" p>
+  </div>
+  <div class="form-group">
+    <label for="HeadingAccuracy">HeadingAccuracy</label>
+    <input type="number" class="form-control" id="HeadingAccuracy" name="HeadingAccuracy" required="required" p>
+  </div>
+  <div class="form-group">
+    <label for="LongPassing">LongPassing</label>
+    <input type="number" class="form-control" id="LongPassing" name="LongPassing" required="required" p>
+  </div>
+  <div class="form-group">
+    <label for="Interceptions">Interceptions</label>
+    <input type="number" class="form-control" id="Interceptions" name="Interceptions" required="required"p>
+  </div>
+  
+  
+  <button type="submit" class="btn btn-primary">Predict!</button>
+  <hr>
+</form>
+<br>
+<h3>{{output}}</h3>
+
+<br>
+{% endblock %}
+

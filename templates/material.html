@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="jumbotron text-center">
+        <h3>Material And Methods</h3>
+            <br>
+            <h5>Used Technologies</h5>
+            <br>
+            <p> Python is an interpreted high-level general-purpose programming language [1]</p>
+            <p>Anaconda is a distribution of the Python and R programming languages for scientific computing (data
+science, machine learning applications, large-scale data
+processing, predictive analytics, etc.), that aims to
+simplify package management and deployment.[2]</p>
+            <p>Spyder is an open-source cross-platform integrated
+development environment for scientific programming in
+the Python language[3]</p>
+    <hr>
+            <br>
+            <h5>Used Libraries</h5>
+            <br>
+            <p>Pandas is a software library written for the Python
+programming language for data manipulation
+and analysis.[4]</p>
+            <p>Numpy is a library for the Python programming
+language, adding support for large, multidimensional arrays and matrices, along with a large
+collection of high-level mathematical functions to
+operate on these arrays.[5]</p>
+            <p>Matplotlib is a plotting library for the Python
+programming language and its numerical mathematics
+extension NumPy.[6]</p>
+            <p>Missingno is a Python library that provides the ability
+to understand the distribution of missing values through
+informative visualizations. [7]</p>
+            <p>Sklearn is a free software machine
+learning library for the Python programming language.
+[8]</p>
+    <hr>
+            <h5>Data Preprocessing</h5>
+            <br>
+            <p>Before applying models for player position prediction, the
+                dataset needs to be pre-processed. Firstly, the variables that
+                were unnecessary to be used in the classification model were
+                excluded from the data set. Then, the categorical variables
+                found in the original data were encoded. At this stage, the
+                sub-region positions of the four main positions of the defender,
+                midfielder, striker and goalkeeper positions have been returned
+                to the main positions. At the same time, the goalkeeper
+                position was deciphered among the prediction results because
+                the abilities that goalkeepers have are different from those of
+                players in the other position.
+                After checking the missing value, all values of each feature
+                are checked, their outliers on different positions were cleared.
+                Thus, the large effect of outliers on this variable was purified.
+                With the help of correlation map, linear relationships between
+                the three main locations were checked and the variables that
+                were considered to have little effect on the classification result
+                were deciphered from the table. While applying this process,
+                it was decided to remove variables whose correlation value
+                was not above +40 and not below -40 in three different
+                comparisons of the three positions.
+                Feature scaling and normalization operations were not applied because the variables other than the single categorical
+                variable in the data series are numeric and are limited to 0-
+                100. Separately from the model that was trained in its original
+                state, the versions that were transformed in a logarithmic base
+                of 10 were also trained and the results were compared with
+                each other. In this comparison, the two results came out very
+                close to each other. </p>
+
+
+                <h7> Feature Importance </h7> <br><br>
+                <img src={{ url_for('static', filename='fe.png') }}  style="width:900px;height:500px;">
+                <hr>
+
+                 
+       <h5>References</h5>
+        <br>
+        <p>[1] https://medium.com/swlh/k-nearest-neighbor-ca2593d7a3c4</p>
+<p>[2] https://www.geeksforgeeks.org/ml-extra-tree-classifier-for-feature-selection</p>
+<p>[3] https://www.datacamp.com/community/tutorials/random-forests-classifier-python</p>
+<p>[4] https://www.analyticssteps.com/blogs/what-light-gbm-algorithm-how-use-it</p>
+<p>[5] https://www.analyticsvidhya.com/blog/2018/09/an-end-to-end-guide-to-understand-the-math-behind-xgboost/</p>
+    </div>
+{% endblock %}

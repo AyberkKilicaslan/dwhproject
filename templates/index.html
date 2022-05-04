@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <div class="jumbotron text-center">
+        <h3>POSITION ESTIMATOR FOR FOOTBALL PLAYERS
+            </h3>
+        <br>
+        <p>In the recently globalized football market, scouting for young talent has increased.
+            Young player networks and infrastructure are critical for the survival of relatively smaller
+            teams in the ever-growing football business.<br>
+            • Scouts for clubs: Scouts of this class are the most common. They are familiar
+            with the ins and outs of the club for which they work in order to identify the
+            ideal type of player who would help the club and the team.
+            <br>
+            • International scouts: These scouts work for international teams, and their goal
+            is to find players who have already signed contracts for their respective
+            countries. Once you've established yourself in your new club, these scouts
+            might be the first step toward playing for your country's international team.
+            <br>
+            • Scouts for agencie: They are sometimes independent agents, and other times
+            they work for agencies. Their job is to find talent and send them to the web of
+            clubs with which they may have contact.
+            <br>
+            In addition to the developing scouting market, young athletes are also striving to show
+themselves. It is very important for them that these young talents come across the right
+scout team in this process. Young athletes who fall into the wrong scout team can be
+misled, and this misdirection can affect their entire career.
+One of the most common misdirections is that athletes are evaluated in the wrong
+position. There are two main reasons for this misdirection. One of them is that the scout
+team is insufficient, and another is that the athletes have abilities that can create
+confusion. Some athletes are able to prove themselves both by attracting attention with
+their defensive qualities and by their offensive qualities.
+Besides the wishes of the football players, it is necessary to make a detailed analysis
+and determine the priority of both physical characteristics and good and bad skills. In this
+process, the use of statistical information as well as football information helps to make
+more accurate choices.
+
+            
+</p>
+        <hr>
+    <h5> Dataset Information </h5>
+    <p>The FIFA 22 game, which contains today’s active football
+        capabilities, creates a simulation environment for us. A
+        prediction system has been created within the game based on
+        the real positions of the players and the characteristics of the
+        football prepared with great care.</p>
+   <p>The data implemented in this study is the FIFA 22
+    Complete Player Dataset downloaded from Kaggle website
+    [1]. The original dataset has 19,259 observations and 90
+    variables. Each observation presents real informations and
+    statistics of game skill for each players at the beginning
+    of 21-22 seasons of professional football leagues. These
+    variables can be categorized into 3 groups:</p>
+    <br>
+    • Real information variables include Name, Nationality, Age, Height, Weight etc.  <br>
+    • Ability information a which contains Finishing, Agility, Volleys, Acceleration, Jumping etc.  <br>
+    • Overall ratings for each positions such as ST, RM, LM, RB,CB, LB. <br>
+The outcome of position predictor system is positon of
+players in the game. Multi-class classification problem has 3
+different target class: attackers, midfielders, defensives.
+As a result, the cleaned data, which is used to build and
+evaluate models, has 23 features and more than
+17,000 observations.
+</p>
+    <br>
+        <hr>
+    <h5> Dataset Visualization </h5>
+    <h7> Box Plot </h7> <br><br>
+    <img src={{ url_for('static', filename='12.png') }}  style="width:400;height:300px;"><br><br>
+    <h7> Histogram </h7> <br><br>
+    <img src={{ url_for('static', filename='13.png') }} style="width:400;height:300px;"><br><br>
+    <h7> Scatter </h7> <br><br>
+    <img src={{ url_for('static', filename='14.png') }} style="width:400;height:300px;"><br><br>
+    <h7> Agility with Positions </h7> <br><br>
+    <img src={{ url_for('static', filename='15.png') }} style="width:400;height:300px;"><br><br>
+    <h7> Curve with Positions </h7> <br><br>
+    <img src={{ url_for('static', filename='16.png') }} style="width:400;height:300px;"><br><br>
+    <h7> Ball Control with Positions </h7> <br><br>
+    <img src={{ url_for('static', filename='17.png') }} style="width:400;height:300px;"><br><br>
+    <h7> Finishing with Positions </h7> <br><br>
+    <img src={{ url_for('static', filename='18.png') }}  style="width:400;height:300px;"><br><br>
+    <h7> Correlation Matrix </h7> <br><br>
+    <img src={{ url_for('static', filename='cr.png') }}  style="width:900px;height:700px;">
+    
+        <hr>
+
+    <h5> About The Team </h5>
+    <p>Hazar Özyağcı 2017510090</p>
+    <p>Süleyman Ayberk Kılıçaslan 2017510053</p>
+    <p>Damla Ülkü 2017510091</p>
+    <p>Deniz Albayrak 2017510007</p>
+    <hr>
+
+    <hr>
+       <h5>References</h5>
+        <br>
+        <p>[1] https://www.kaggle.com/cashncarry/fifa-22-complete-player-dataset</p>
+
+    </div>
+
+
+{% endblock %}
