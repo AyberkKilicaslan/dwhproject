@@ -4,29 +4,29 @@ import pickle
 import pandas as pd
 import numpy as np
 
-app = Flask(__name__)
-@app.route("/")
+application = Flask(__name__)
+@application.route("/")
 def index():
     return render_template("index.html")
 
 
-@app.route("/literature")
+@application.route("/literature")
 def literature():
     return render_template("literature.html")
 
-@app.route("/material")
+@application.route("/material")
 def material():
     return render_template("material.html")
 
-@app.route("/algorithms")
+@application.route("/algorithms")
 def performance():
     return render_template("algorithms.html")
 
-@app.route("/test")
+@application.route("/test")
 def test():
     return render_template("test.html")
 
-@app.route("/testRes", methods=["POST"])
+@application.route("/testRes", methods=["POST"])
 
 def prd():
     
@@ -90,4 +90,4 @@ def predict(Input):
     return (Prediction)
 
 if __name__ == "__main__":
-    app.run(debug=False)
+    application.run(debug=False)
